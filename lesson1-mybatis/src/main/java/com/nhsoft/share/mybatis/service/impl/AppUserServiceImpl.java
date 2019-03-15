@@ -6,10 +6,12 @@ import com.nhsoft.share.mybatis.model.AppUser;
 import com.nhsoft.share.mybatis.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@Transactional
 public class AppUserServiceImpl implements AppUserService {
 
     @Autowired
@@ -23,6 +25,7 @@ public class AppUserServiceImpl implements AppUserService {
 
     @Override
     public void update(AppUser model) {
+        appUserDao.update(model);
         appUserDao.update(model);
     }
 
