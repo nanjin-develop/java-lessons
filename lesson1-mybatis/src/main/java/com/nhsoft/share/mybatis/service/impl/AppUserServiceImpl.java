@@ -33,6 +33,7 @@ public class AppUserServiceImpl implements AppUserService {
 
     @Override
     public List<AppUser> list() {
+        appUserDao.list();
         return appUserDao.list();
     }
 }
