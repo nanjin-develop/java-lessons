@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nhsoft.share.mybatis.dao.AppUserDao">
 
+    <resultMap id="baseResultMap" type="com.nhsoft.share.mybatis.model.AppUser">
+        <id column="user_num" jdbcType="INTEGER" property="userNum" />
+        <result column="user_code" jdbcType="VARCHAR" property="userCode" />
+        <result column="user_name" jdbcType="VARCHAR" property="userName" />
+        <result column="user_sex" jdbcType="BIT" property="userSex" />
+    </resultMap>
+
     <insert id="save" parameterType="com.nhsoft.share.mybatis.model.AppUser">
         insert into app_user(user_num, user_name, user_code, user_sex) values ( #{userNum}, #{userName}, #{userCode}, #{userSex});
     </insert>
@@ -14,7 +21,7 @@
         delete from app_user where user_num = #{userNum}
     </delete>
 
-    <select id="list" resultType="com.nhsoft.share.mybatis.model.AppUser">
+    <select id="list" resultMap="baseResultMap">
         select * from app_user
     </select>
 </mapper>

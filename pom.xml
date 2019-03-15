@@ -18,6 +18,8 @@
         <java.version>1.8</java.version>
     </properties>
 
+    <packaging>pom</packaging>
+
     <modules>
         <module>lesson1-mybatis</module>
     </modules>

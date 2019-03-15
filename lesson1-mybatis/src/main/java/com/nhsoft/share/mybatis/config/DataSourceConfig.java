@@ -30,19 +30,19 @@ import java.util.List;
 @Configuration
 public class DataSourceConfig {
 
-   @Autowired
-   private  DataSourceProperties dataSourceProperties;
+    @Autowired
+    private  DataSourceProperties dataSourceProperties;
 
-   @Autowired
-   private MybatisProperties properties;
+    @Autowired
+    private MybatisProperties properties;
 
-   private ResourceLoader resourceLoader = new DefaultResourceLoader();
+    private ResourceLoader resourceLoader = new DefaultResourceLoader();
 
-   private  Interceptor[] interceptors = null;
+    private  Interceptor[] interceptors = null;
 
-   private  DatabaseIdProvider databaseIdProvider = null;
+    private  DatabaseIdProvider databaseIdProvider = null;
 
-   private List<ConfigurationCustomizer> configurationCustomizers = new ArrayList<>();
+    private List<ConfigurationCustomizer> configurationCustomizers = new ArrayList<>();
 
     @Primary
     @Bean(name = "dataSource")

@@ -23,7 +23,7 @@ public class CopyUtil {
     public static<S,T>  List<T>  toList(List<S> sourceList, Class<T> clazz) throws Exception {
         List<T> targetList=new ArrayList<>();
         for (S sourceTemp : sourceList) {
-            T result= to(sourceTemp,clazz);
+            T result= to(sourceTemp, clazz);
             targetList.add(result);
         }
         return targetList;
