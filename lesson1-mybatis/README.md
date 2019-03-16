@@ -7,7 +7,7 @@
 
 参数名         | 用处              | memo     |
 --------------------|------------------|-----------------------|
-mapperLocations |  指定mapper.xml路径，spring boot项目，默认在resource   | mybatis.mapperlocations=classpath:com.nhsoft.share.mybatis.model/*.xml|
+mapperLocations |  指定mapper.xml路径，spring boot项目，默认在resource   | mybatis.mapper-locations=classpath:mapper/*.xml |
 checkConfigLocation |  是否校验configLocation路径是否存在   | mybatis.mapperlocations=classpath:com.nhsoft.share.mybatis.model/*.xml|
 configLocation       | mybatis-config.xml文件路径，springbooty一般用不到   |  |
 org.apache.ibatis.session.Configuration  |这是 MyBatis 中极为重要的调整设置，它们会改变 MyBatis 的运行时行为。下表描述了设置中各项的意图、默认值等      | 具体见下面表格      |
