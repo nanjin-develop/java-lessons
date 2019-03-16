@@ -9,7 +9,7 @@
         <result column="user_sex" jdbcType="BIT" property="userSex" />
     </resultMap>
 
-    <insert id="save" parameterType="com.nhsoft.share.mybatis.model.AppUser">
+    <insert id="save" parameterType="com.nhsoft.share.mybatis.model.AppUser" statementType="PREPARED">
         insert into app_user(user_num, user_name, user_code, user_sex) values ( #{userNum}, #{userName}, #{userCode}, #{userSex});
     </insert>
 
@@ -24,4 +24,6 @@
     <select id="list" resultMap="baseResultMap">
         select * from app_user
     </select>
+
+
 </mapper>
