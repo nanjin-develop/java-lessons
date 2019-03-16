@@ -34,9 +34,9 @@ org.apache.ibatis.session.Configuration类 | MyBatis全局配置信息类
 org.apache.ibatis.session.SqlSessionFactory接口 | 操作SqlSession的工厂接口，具体的实现类是DefaultSqlSessionFactory
 org.apache.ibatis.session.SqlSession接口 | 执行sql，管理事务的接口，具体的实现类是DefaultSqlSession
 org.apache.ibatis.executor.Executor接口 | sql执行器，SqlSession执行sql最终是通过该接口实现的，常用的实现类有SimpleExecutor,ResueExecutor, BatchExecutor,这些实现类都使用了装饰者设计模式
-StatementType | 1. Statement 每次执行sql语句，数据库都要执行sql语句的编译 ，最好用于仅执行一次查询并返回结果的情形，效率高于PreparedStatement.  <br> 2. PreparedStatement是预编译的，使用PreparedStatement有几个好处  <br> &emsp;&emsp; a. 在执行可变参数的一条SQL时，PreparedStatement比Statement的效率高，因为DBMS预编译一条SQL当然会比多次编译一条SQL的效率要高。  <br> &emsp;&emsp; b. 安全性好，有效防止Sql注入等问题。  <br> &emsp;&emsp; c.  对于多次重复执行的语句，使用PreparedStament效率会更高一点，并且在这种情况下也比较适合使用batch；  <br> &emsp;&emsp; d.  代码的可读性和可维护性。 <br> 3. CallableStatement接口扩展PreparedStatement，用来调用存储过程,它提供了对输出和输入/输出参数的支持。CallableStatement 接口还具有对 PreparedStatement 接口提供的输入参数的支持.|
-StatementHandler | **1. SimpleStatementHandler**，这个很简单了，就是对应我们JDBC中常用的Statement接口，用于简单SQL的处理；<br> **2. PreparedStatementHandler**，这个对应JDBC中的PreparedStatement，预编译SQL的接口；<br> **3. CallableStatementHandler**，这个对应JDBC中CallableStatement，用于执行存储过程相关的接口；<br> **4. RoutingStatementHandler**，这个接口是以上三个接口的路由，没有实际操作，只是负责上面三个StatementHandler的创建及调用。
-
+org.apache.ibatis.mapping.StatementType | 1. Statement 每次执行sql语句，数据库都要执行sql语句的编译 ，最好用于仅执行一次查询并返回结果的情形，效率高于PreparedStatement.  <br> 2. PreparedStatement是预编译的，使用PreparedStatement有几个好处  <br> &emsp;&emsp; a. 在执行可变参数的一条SQL时，PreparedStatement比Statement的效率高，因为DBMS预编译一条SQL当然会比多次编译一条SQL的效率要高。  <br> &emsp;&emsp; b. 安全性好，有效防止Sql注入等问题。  <br> &emsp;&emsp; c.  对于多次重复执行的语句，使用PreparedStament效率会更高一点，并且在这种情况下也比较适合使用batch；  <br> &emsp;&emsp; d.  代码的可读性和可维护性。 <br> 3. CallableStatement接口扩展PreparedStatement，用来调用存储过程,它提供了对输出和输入/输出参数的支持。CallableStatement 接口还具有对 PreparedStatement 接口提供的输入参数的支持.|
+org.apache.ibatis.executor.statement.StatementHandler | **1. SimpleStatementHandler**，这个很简单了，就是对应我们JDBC中常用的Statement接口，用于简单SQL的处理；<br> **2. PreparedStatementHandler**，这个对应JDBC中的PreparedStatement，预编译SQL的接口；<br> **3. CallableStatementHandler**，这个对应JDBC中CallableStatement，用于执行存储过程相关的接口；<br> **4. RoutingStatementHandler**，这个接口是以上三个接口的路由，没有实际操作，只是负责上面三个StatementHandler的创建及调用。
+org.apache.ibatis.mapping.MappedStatement | Mapper.xml中 insert，select，update，delete相关参数
 
 ### 3. Executor
 
