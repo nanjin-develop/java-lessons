@@ -21,9 +21,10 @@
         delete from app_user where user_num = #{userNum}
     </delete>
 
-    <select id="list" resultMap="baseResultMap">
+    <select id="list" resultMap="baseResultMap" flushCache="false">
         select * from app_user
     </select>
 
 
+    <cache/>
 </mapper>
