@@ -51,7 +51,7 @@ public class AppUserServiceImpl implements AppUserService {
 
 
         appUserDao1.list();
-//        sqlSession1.commit();
+        sqlSession1.commit();
 
         log.info("第一次查询************************\r\n" );
 
