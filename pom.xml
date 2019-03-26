@@ -22,6 +22,7 @@
 
     <modules>
         <module>lesson1-mybatis</module>
+        <module>lesson2-design-pattern</module>
     </modules>
 
     <dependencies>
