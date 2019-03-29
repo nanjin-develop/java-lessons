@@ -1,4 +1,4 @@
-package om.nhsoft.nanjing.design.LSP;
+package om.nhsoft.nanjing.design.DIP;
 
 
 import lombok.Data;
